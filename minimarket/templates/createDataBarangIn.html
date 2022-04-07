@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indimarket</title>
+</head>
+<body>
+<h1>Input Data Barang</h1>
+<form action="{{url_for('tambahDataBarangIn')}}" method="post">
+    KODE BARANG IN: <br><input type="number" name="kode_barang_in" size="11 " maxlength="5"><br>
+    KODE BARANG : <br>
+    <input type="number" name="kode_barang" size="40" maxlength="35"><br>
+    JENIS : <br>
+    <input type="date" name="tgl_masuk" size="25" maxlength="25"><br>
+    STOK : <br>
+    <input type="number" name="num_stok" size="11" maxlength="25"><br>
+    SUPPLIER :  <br>
+    <input type="text" name="supplier" size="30" maxlength="25"><br>
+    <p><input type="submit" value="Simpan Data"></p>
+</form>
+</body>
+</html>

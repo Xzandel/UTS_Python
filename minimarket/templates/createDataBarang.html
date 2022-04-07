@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Indimarket</title>
+</head>
+<body>
+<h1>Input Data Barang</h1>
+    <form action="{{url_for('tambahDataBarang')}}" method="post">
+    KODE BARANG : <br><input type="number" name="kode_barang" size="11 " maxlength="5"><br>
+    NAMA BARANG : <br>
+    <input type="text" name="txt_nama_barang" size="40" maxlength="35"><br>
+    JENIS : <br>
+    <input type="text" name="txt_jenis" size="25" maxlength="25"><br>
+    STOK : <br>
+    <input type="number" name="num_stok" size="11" maxlength="25"><br>
+    <p><input type="submit" value="Simpan Data"></p>
+</form>
+</body>
+</html>

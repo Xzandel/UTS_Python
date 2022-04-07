@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indimarket</title>
+</head>
+<body>
+    <h1>Form Ubah Data Barang</h1>
+    <form action="http://localhost:5000/ubahDataBarang/{{Units.KodeBrg}}" method="post">
+        KODE BARANG : <br>
+        <input type="number" name="numKode" size="10" value="{{Units.KodeBrg}}"
+               maxlength="4"/> <br>
+        NAMA BARANG : <br>
+        <input type="text" name="txtNamaBarang" size="10" value="{{Units.NamaBrg}}"
+               maxlength="40"/> <br>
+        JENIS : <br>
+        <input type="text" name="txtJenis" size="10" value="{{Units.Jenis}}"
+               maxlength="25"/> <br>
+        STOK : <br>
+        <input type="number" name="numStok" size="10" value="{{Units.Stok}}"
+               maxlength="11"/> <br>
+        <p><input type="submit" value="Ubah Data"></p>
+    </form>
+
+</body>
+</html>

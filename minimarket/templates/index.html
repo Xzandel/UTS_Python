@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UTS - Indimarket</title>
+</head>
+<body>
+<!--    {%with messages = get_flashed_messages()%}-->
+<!--        {%if messages %}-->
+<!--            {% for message in messages %}-->
+<!--                {{message}}-->
+<!--            {%endfor%}-->
+<!--        {%endif%}-->
+<!--    {%endwith%}-->
+
+    <h1>Daftar Barang Indimarket</h1>
+    <table border="1">
+        <tr>
+            <th width="70">Kode Barang</th>
+            <th width="300">Nama Barang</th>
+            <th width="150">Jenis</th>
+            <th width="150">Stok</th>
+            <th width="70">Ubah</th>
+            <th width="70">Hapus</th>
+        </tr>
+        {% for barang in container%}
+        <tr>
+            <td>{{ barang.KodeBrg }}</td>
+            <td>{{ barang.NamaBrg }}</td>
+            <td>{{ barang.Jenis }}</td>
+            <td>{{ barang.Stok }}</td>
+            <td><a href="http://localhost:5000/ubahDataBarang/{{barang.KodeBrg}}">Ubah</a></td>
+            <td><a href="http://localhost:5000/hapusDataBarang/{{barang.KodeBrg}}">Hapus</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+<p><a href="http://localhost:5000/tambahBarang">Input Data Baru</a></p>
+
+<h1>Daftar Barang IN Indimarket</h1>
+    <table border="1">
+        <tr>
+            <th width="70">Kode Barang In</th>
+            <th width="300">Kode Barang</th>
+            <th width="150">Tanggal Masuk</th>
+            <th width="70">Jumlah</th>
+            <th width="70">Supplier</th>
+            <th width="70">Ubah</th>
+            <th width="70">Hapus</th>
+        </tr>
+        {% for barang_in in container2%}
+        <tr>
+            <td>{{ barang_in.KodeBrgIn }}</td>
+            <td>{{ barang_in.KodeBrg }}</td>
+            <td>{{ barang_in.TglMasuk }}</td>
+            <td>{{ barang_in.Jumlah }}</td>
+            <td>{{ barang_in.Supplier }}</td>
+            <td><a href="http://localhost:5000/ubahDataBarangIn/{{barang_in.KodeBrgIn}}">Ubah</a></td>
+            <td><a href="http://localhost:5000/hapusDataBarangIn/{{barang_in.KodeBrgIn}}">Hapus</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+<p><a href="http://localhost:5000/tambahDataBarangIn">Input Data Baru</a></p>
+</body>
+</html>
