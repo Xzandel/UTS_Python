@@ -20,6 +20,7 @@ def tambahDataBarang():
       Barang = unit.Barang(KodeBrg, NamaBrg, Jenis, Stok)
       db.session.add(Barang)
       db.session.commit()
+      flash("BERHASIL")
       return redirect(url_for('index'))
    else:
       return render_template('createDataBarang.html')
@@ -35,6 +36,7 @@ def ubahDataBarang(KodeBrg):
       Units.Stok = request.form['numStok']
       db.session.add(Units)
       db.session.commit()
+      flash("BERHASIL")
       return redirect(url_for('index'))
    else:
       return render_template('ubahDataBarang.html',Units=Units)
@@ -64,7 +66,7 @@ def tambahDataBarangIn():
       db.session.commit()
       db.session.add(Unit)
       db.session.commit()
-
+      flash("BERHASIL")
       return redirect(url_for('index'))
    else:
       return render_template('createDataBarangIn.html')
@@ -86,6 +88,7 @@ def ubahDataBarangIn(KodeBrgIn):
       db.session.commit()
       db.session.add(Unit)
       db.session.commit()
+      flash("BERHASIL")
       return redirect(url_for('index'))
    else:
       return render_template('ubahDataBarangIn.html',UnitsIn=UnitsIn)
@@ -95,4 +98,5 @@ def hapusDataBarangIn(KodeBrgIn):
    Units = unitin.BarangMasuk.query.filter_by(KodeBrgIn=KodeBrgIn).first()
    db.session.delete(Units)
    db.session.commit()
+   flash("BERHASIL")
    return redirect(url_for('index'))
